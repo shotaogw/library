@@ -1,24 +1,69 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
+| Column     | Type   | Options                   |
+| ---------- | ------ | ------------------------- |
+| nickname   | string | null: false               |
+| email      | string | null: false, unique: true |
+| password   | string | null: false               |
+| profile    | text   | null: false               |
+| birth_date | date   | null: false               |
 
-Things you may want to cover:
+### Association
+- has_many :books
+- has_many :words
+- has_many :comments
 
-* Ruby version
+## books テーブル
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| title    | string     | null: false                    |
+| genre_id | integer    | null: false                    |
+| user     | references | null: false, foreign_key: true |
 
-* System dependencies
+### Association
+- belongs_to :user
+- has_many :words
+- has_many :comments
+- has_many :tags, through: book_tag_relations
 
-* Configuration
+## words テーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| name   | string     | null: false                    |
+| info   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| book   | references | null: false, foreign_key: true |
 
-* Database creation
+### Association
+- belongs_to :user
+- belongs_to :book
 
-* Database initialization
+## comments テーブル
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| book    | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :book
 
-* Services (job queues, cache servers, search engines, etc.)
+## book_tag_relations テーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| book   | references | null: false, foreign_key: true |
+| tag    | references | null: false, foreign_key: true |
 
-* Deployment instructions
+### Association
+- belongs_to :book
+- belongs_to :tag
 
-* ...
+## tags テーブル
+| Column  | Type       | Options     |
+| ------- | ---------- | ----------- |
+| keyword | string     | null: false |
+
+### Association
+- has_many :books, through: book_tag_relations
