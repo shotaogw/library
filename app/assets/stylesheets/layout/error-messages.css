@@ -1,0 +1,11 @@
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin: 250px auto;
+}
+
+.error-message {
+  font-size: 16px;
+  color: red;
+  margin: 5px;
+}

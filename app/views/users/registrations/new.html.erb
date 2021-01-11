@@ -1,0 +1,58 @@
+<div class="top-page-extra">
+  <div class='sub-sidebar'>
+    <%= link_to image_tag("/IMG_1476.png", class: "library-log"), root_path %>
+    <%= render partial: 'layouts/error-messages', locals: { model: @user } %>
+  </div>
+
+  <div class="contents row">
+    <%= form_with model: @user, url: user_registration_path, method: :post, local: true do |f| %>
+      <div class='form-wrap-extra'>
+        <div class='form-header'>
+          <h1 class='form-header-text'>
+            アカウント作成
+          </h1>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">ニックネーム</label>
+          </div>
+          <%= f.text_field :nickname, class:"input-default", id:"nickname", autofocus: true %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">メールアドレス</label>
+          </div>
+          <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">パスワード</label>
+          </div>
+          <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">パスワード(確認)</label>
+          </div>
+          <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力してください" %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">プロフィール</label>
+          </div>
+          <%= f.text_area :profile, class:"input-default", id:"profile", maxlength:"200" %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">生年月日</label>
+          </div>
+          <%= raw sprintf(f.date_select(:birth_date, class:'input-birth', id:"birth-date", use_month_numbers: true,
+                        start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1), date_separator: '%s'), "年", "月") + "日" %>
+        </div>
+        <div class='login-btn-wrap'>
+          <%= f.submit "登録する", class: 'login-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
