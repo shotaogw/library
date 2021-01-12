@@ -1,0 +1,107 @@
+.cards {
+  height: calc(100vh - 150px);
+  width: calc(100vw - 300px);
+}
+
+.user-info {
+  height: 45%;
+}
+
+.upper {
+  height: 27%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-nickname {
+  font-size: 45px;
+  font-family: serif;
+  margin-left: 80px;
+}
+
+.user-edit {
+  margin-right: 80px;
+  padding: 5px 10px;
+  border: 1px double white;
+  background-color: #4040a3;
+  border-radius:30px;
+}
+
+.user-edit-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: snow;
+}
+
+.middle {
+  height: 40%;
+  margin: 13px 20px;
+  border: 1px solid lightgrey;
+  border-radius:30px;
+}
+
+.user-profile {
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.lower {
+  height: 23%;
+  padding: 10px 20px;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-type-select {
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.card {
+  height: 55%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-content {
+  text-align: center;
+  width: 45%;
+  height: 80%;
+  position: relative;
+  background-color: rgb(245, 245, 245);
+}
+
+.card-content:before {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-top: solid 30px white;
+  border-left: solid 30px transparent;
+}
+.card-content:after {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-bottom: solid 30px #4040a3;
+  border-right: solid 30px transparent;
+  top: 0;
+}
+
+.card-name {
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
