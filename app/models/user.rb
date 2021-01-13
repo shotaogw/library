@@ -10,5 +10,5 @@ class User < ApplicationRecord
     validates :profile
   end
   validates :email, uniqueness: true
-  validates :password, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'is half-width characters' }, on: :create
+  validates :password, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'を半角英数字で入力してください' }, on: :create
 end
