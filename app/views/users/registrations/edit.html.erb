@@ -1,0 +1,49 @@
+<div class="top-page-extra">
+  <div class='sub-sidebar'>
+    <%= image_tag "/IMG_1476.png", class: "library-log" %>
+    <div class="message-box">
+      <%= render partial: 'layouts/error-messages', locals: { model: resource }, class: "error-alert" %>
+    </div>
+  </div>
+
+  <div class="contents row">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <div class='form-wrap'>
+        <div class='form-header'>
+          <h1 class='form-header-text'>
+            アカウント編集
+          </h1>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">ニックネーム</label>
+          </div>
+          <%= f.text_field :nickname, class:"input-default", id:"nickname", autofocus: true %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">メールアドレス</label>
+          </div>
+          <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">プロフィール</label>
+          </div>
+          <%= f.text_area :profile, class:"input-default", id:"profile", maxlength:"200" %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">生年月日</label>
+          </div>
+          <%= raw sprintf(f.date_select(:birth_date, class:'input-birth', id:"birth-date", use_month_numbers: true,
+                        start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1), date_separator: '%s'), "年", "月") + "日" %>
+        </div>
+        <ul class='login-btn-wrap'>
+          <li><%= f.submit "更新する", class: 'login-btn' %></li>
+          <li><%= link_to "戻る", user_path(current_user.id), class: 'back-btn' %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

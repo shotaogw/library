@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div>
+    <div class="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div class="cards">
+      <div class="user-info">
+        <div class="upper">
+          <div class="user-nickname">
+            <%= @user.nickname %>
+          </div>
+          <ul class="user-edit">
+            <% if user_signed_in? && current_user == @user %>
+              <li><%= link_to '編集する', edit_user_registration_path(current_user.id), class: "user-edit-link" %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="middle">
+          <div class="user-profile">
+            <%= @user.profile %>
+          </div>
+        </div>
+        <div class="lower">
+          <%= link_to 'books()', '#', class: "card-type-select" %>
+          <%= link_to 'words()', '#', class: "card-type-select" %>
+          <%= link_to 'bookmarks()', '#', class: "card-type-select" %>
+        </div>
+      </div>
+      <%# booksの表示 %>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-name">
+          aaaaaaaaa
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-name">
+          a
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

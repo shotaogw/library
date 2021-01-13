@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+}
+
+/* サイドバー */
+.side-wrap {
+  height: 100vh;
+  width: 300px;
+  background-color: #2e2e8a;
+}
+
+.headline {
+  height: 70px;
+  padding: 50px 0 40px 60px;
+  
+}
+
+.headline-name {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* ヘッダー */
+.header-wrap {
+  height: 150px;
+  width: calc(100vw - 300px);
+  padding: 0 80px;
+  border-bottom: 3px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-log {
+  width: 350px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+  margin: 60px 50px 0;
+}
+
+.to-mypage {
+  color: rgb(156, 150, 150);
+  font-size: 26px;
+  font-weight: bold;
+  font-family: serif;
+  text-decoration: none;
+}
