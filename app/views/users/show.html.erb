@@ -12,9 +12,12 @@
           <div class="user-nickname">
             <%= @user.nickname %>
           </div>
-          <div class="user-edit">
-            <%= link_to '編集する', '#', class: "user-edit-link" %>
-          </div>
+          <ul class="user-edit">
+            <% if user_signed_in? && current_user == @user %>
+              <li><%= link_to '編集する', edit_user_registration_path(current_user.id), class: "user-edit-link" %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+            <% end %>
+          </ul>
         </div>
         <div class="middle">
           <div class="user-profile">

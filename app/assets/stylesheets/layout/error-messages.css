@@ -1,7 +1,7 @@
 .error-alert {
   display: flex;
   justify-content: center;
-  margin: 250px auto;
+  margin: 250px 50px;
 }
 
 .error-message {

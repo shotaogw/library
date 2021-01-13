@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :password_confirmation
+    validates :password_confirmation, on: :create
     validates :profile
   end
   validates :email, uniqueness: true
-  validates :password, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'is half-width characters' }
+  validates :password, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'is half-width characters' }, on: :create
 end

@@ -3,6 +3,6 @@
     <%= image_tag("/IMG_1476.png", class: "header-log") %>
   </div>
   <div class="right-header">
-    <%= link_to "#{current_user.nickname}", user_path(current_user.id), class: "to-mypage" %>
+    <div class="to-mypage"><%= current_user.nickname %></div>
   </div>
 </div>
