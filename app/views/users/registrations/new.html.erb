@@ -1,7 +1,9 @@
 <div class="top-page-extra">
   <div class='sub-sidebar'>
     <%= link_to image_tag("/IMG_1476.png", class: "library-log"), root_path %>
-    <%= render partial: 'layouts/error-messages', locals: { model: @user } %>
+    <div class="message-box">
+      <%= render partial: 'layouts/error-messages', locals: { model: @user }, class: "error-alert" %>
+    </div>
   </div>
 
   <div class="contents row">

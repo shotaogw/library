@@ -1,11 +1,16 @@
+.message-box {
+  width: 90%;
+  height: 40%;
+  margin: 0 10%;
+}
+
 .error-alert {
   display: flex;
   justify-content: center;
-  margin: 250px 50px;
 }
 
 .error-message {
-  font-size: 16px;
+  margin: 0.1vh 5% 0.1vh 8%;
   color: red;
-  margin: 5px;
+  font-size: 1.2vmax;
 }
