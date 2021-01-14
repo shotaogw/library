@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div>
+    <div class="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div class="show-book-wrap">
+      <div class="show-book">
+        <div class="show-book-contents">
+          <div class="show-book-content">
+            <%= @book.title %>
+          </div>
+          <div class="show-book-content">
+            <%= @book.genre.name %>
+          </div>
+          <div class="show-book-content-user">
+            <%= "by #{@book.user.nickname}" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,14 +12,14 @@
       </div>
       <div class="book">
         <% @books.each do |book| %>
-          <div class="book-content">
+          <%= link_to(book_path(book.id), class: "book-content") do %>
             <div class="book-name">
               <%= book.title %>
             </div>
             <div class="book-genre">
               <%= book.genre.name %>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

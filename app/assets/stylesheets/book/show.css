@@ -1,0 +1,52 @@
+.show-book-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.show-book {
+  height: 500px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  background-color: mediumorchid;
+}
+
+.show-book-contents {
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  height: 370px;
+  position: relative;
+  background-color: rgb(231, 229, 229);
+}
+
+.show-book-contents:before {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-top: solid 30px white;
+  border-left: solid 30px transparent;
+}
+.show-book-contents:after {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-bottom: solid 30px #4040a3;
+  border-right: solid 30px transparent;
+  top: 0;
+}
+
+.show-book-content{
+  font-size: 3vh;
+  padding-top: 3vh;
+}
+
+.show-book-content-user {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
