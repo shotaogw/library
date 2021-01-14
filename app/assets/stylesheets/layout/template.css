@@ -5,6 +5,7 @@
 /* サイドバー */
 .side-wrap {
   height: 100vh;
+  min-height: 100%;
   width: 300px;
   background-color: #2e2e8a;
 }
@@ -12,10 +13,11 @@
 .headline {
   height: 70px;
   padding: 50px 0 40px 60px;
-  
+  background-color: #2e2e8a;
 }
 
 .headline-name {
+  position: fixed;
   color: white;
   font-size: 20px;
   text-decoration: none;

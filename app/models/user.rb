@@ -12,4 +12,7 @@ class User < ApplicationRecord
   end
   validates :email, uniqueness: true
   validates :password, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'を半角英数字で入力してください' }, on: :create
+
+  has_many :books
+  has_many :words
 end

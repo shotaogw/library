@@ -4,11 +4,12 @@
 }
 
 .user-info {
-  height: 45%;
+  height: 270px;
 }
 
 .upper {
   height: 27%;
+  min-width: 500px;
   padding: 30px;
   display: flex;
   justify-content: space-between;
@@ -49,6 +50,7 @@
 
 .middle {
   height: 40%;
+  min-width: 770px;
   margin: 13px 20px;
   border: 1px solid lightgrey;
   border-radius:30px;
@@ -56,12 +58,14 @@
 
 .user-profile {
   padding: 10px 30px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
+  word-wrap: break-word;
 }
 
 .lower {
   height: 23%;
+  min-width: 500px;
   padding: 10px 20px;
   background-color: rgb(245, 245, 245);
   display: flex;
@@ -77,17 +81,22 @@
 
 .card {
   height: 55%;
+  min-width: 400px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
 }
 
 .card-content {
-  text-align: center;
   width: 45%;
+  min-width: 350px;
+  max-width: 450px;
   height: 80%;
+  min-height: 270px;
+  margin: 10px;
   position: relative;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(231, 229, 229);
 }
 
 .card-content:before {
@@ -112,9 +121,7 @@
 
 .card-name {
   font-size: 36px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+  padding: 10px 30px;
+  text-align: center;
 }
