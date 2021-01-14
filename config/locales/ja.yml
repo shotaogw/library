@@ -6,6 +6,10 @@ ja:
         nickname: ニックネーム
         profile: プロフィール
         birth_date: 生年月日
+      book:
+        title: タイトル
+        genre_id: ジャンル
+        user: ユーザー
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div>
+    <div class="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div class="new-book">
+      <%= form_with model: @book, url: books_path, method: :post, local: true do |f| %>
+        <div class="new-book-text">
+          ブックを作成する
+        </div>
+        <%= render partial: 'layouts/error-messages', locals: { model: @book }, class: "book-error-alert" %>
+        <div class="new-book-content">
+          <div class="new-book-content-text">
+            <p>タイトル</p>
+          </div>
+          <%= f.text_area :title, class:"new-book-title", id:"book-title", placeholder:"タイトル（40文字まで)", maxlength:"40" %>
+          <div class="new-book-content-text">
+            <P>ジャンル</p>
+          </div>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
+        </div>
+        <div class='create-book-btn-wrap'>
+          <%= f.submit "作成する", class: 'create-book-btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
