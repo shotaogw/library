@@ -4,15 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .new-book-text {
   text-align: center;
   font-size: 4vh;
-}
-
-.book-error-alert {
-  text-align: center;
 }
 
 .new-book-content {
@@ -77,3 +74,5 @@
   margin: 1.5vh auto;
   font-size: 2.5vh;
 }
+
+.back-btn {}

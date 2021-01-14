@@ -89,12 +89,15 @@
 }
 
 .card-content {
+  text-align: center;
+  text-decoration: none;
+  color: black;
   width: 45%;
   min-width: 350px;
   max-width: 450px;
   height: 80%;
   min-height: 270px;
-  margin: 10px;
+  margin: 40px 20px;
   position: relative;
   background-color: rgb(231, 229, 229);
 }
@@ -122,6 +125,6 @@
 .card-name {
   font-size: 36px;
   word-wrap: break-word;
+  margin-top: 80px;
   padding: 10px 30px;
-  text-align: center;
 }

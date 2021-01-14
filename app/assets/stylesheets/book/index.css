@@ -1,3 +1,7 @@
+.books {
+  text-align: center;
+}
+
 .to-newbook {
   text-align: right;
   margin: 20px 10vw 0 0;
@@ -8,7 +12,12 @@
   font-size: 24px;
   color: #4040a3;
   border: 2px solid #4040a3;
+  border-radius: 10px;
   padding: 5px;
+}
+
+.delete-notice {
+  color: rgb(240, 52, 52);
 }
 
 .book {
@@ -21,12 +30,13 @@
 
 .book-content {
   text-align: center;
+  color: black;
   width: 45%;
   min-width: 350px;
   max-width: 450px;
   height: 80%;
   min-height: 270px;
-  margin: 10px;
+  margin: 40px 20px;
   position: relative;
   background-color: rgb(231, 229, 229);
 }

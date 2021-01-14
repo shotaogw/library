@@ -33,16 +33,16 @@
       <%# booksの表示 %>
       <div class="card-wrap">
         <div class="card">
-          <div class="card-content">
-            <div class="card-name">
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="card-name">
-            a
-            </div>
-          </div>
+          <% @books.each do |book| %>
+            <%= link_to(book_path(book.id), class: "card-content") do %>
+              <div class="card-name">
+                <%= book.title %>
+              </div>
+              <div class="card-sub-name">
+                <%= book.genre.name %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
