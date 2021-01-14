@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div>
+    <div class="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div class="books">
+      <div class="to-newbook">
+        <%= link_to '新規作成', new_book_path, class: "to-newbook-text" %>
+      </div>
+      <div class="book">
+        <% @books.each do |book| %>
+          <div class="book-content">
+            <div class="book-name">
+              <%= book.title %>
+            </div>
+            <div class="book-genre">
+              <%= book.genre.name %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
