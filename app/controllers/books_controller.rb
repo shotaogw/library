@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @books = Book.all.order(created_at: :DESC)
@@ -35,7 +36,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    flash[:notice] = "削除が完了しました"
+    flash[:notice] = '削除が完了しました'
     redirect_to action: :index
   end
 
@@ -47,5 +48,9 @@ class BooksController < ApplicationController
 
   def set_book
     @book = Book.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index if current_user != @book.user
   end
 end
