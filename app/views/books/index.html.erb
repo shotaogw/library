@@ -10,6 +10,9 @@
       <div class="to-newbook">
         <%= link_to '新規作成', new_book_path, class: "to-newbook-text" %>
       </div>
+      <div class="delete-notice">
+        <%= flash[:notice] %>
+      </div>
       <div class="book">
         <% @books.each do |book| %>
           <%= link_to(book_path(book.id), class: "book-content") do %>
