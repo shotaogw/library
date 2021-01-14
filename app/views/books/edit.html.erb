@@ -7,9 +7,9 @@
       <%= render "layouts/header" %>
     </div>
     <div class="new-book">
-      <%= form_with model: @book, url: books_path, method: :post, local: true do |f| %>
+      <%= form_with model: @book, url: book_path(@book.id), method: :put, local: true do |f| %>
         <div class="new-book-text">
-          ブックを作成する
+          ブックを編集する
         </div>
         <%= render partial: 'layouts/error-messages', locals: { model: @book }, class: "book-error-alert" %>
         <div class="new-book-content">
@@ -23,9 +23,9 @@
           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
         </div>
         <div class='create-book-btn-wrap'>
-          <%= f.submit "作成する", class: 'create-book-btn' %>
+          <%= f.submit "更新する", class: 'create-book-btn' %>
         </div>
-        <%= link_to "戻る", books_path, class: 'back-btn' %>
+        <%= link_to "戻る", book_path(@book.id), class: 'back-btn' %>
       <% end %>
     </div>
   </div>

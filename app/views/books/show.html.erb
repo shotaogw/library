@@ -7,6 +7,16 @@
       <%= render "layouts/header" %>
     </div>
     <div class="show-book-wrap">
+
+      <%# ブックを作成したユーザーにのみ表示する %>
+      <div class="edit-book">
+      <% if user_signed_in? && current_user == @book.user %>
+        <div class="to-editbook">
+          <%= link_to '編集する', edit_book_path(@book.id), class: "to-newbook-text" %>
+        </div>
+      <% end %>
+      </div>
+
       <div class="show-book">
         <div class="show-book-contents">
           <div class="show-book-content">
