@@ -20,6 +20,9 @@
 
       <div class="show-book">
         <div class="show-book-contents">
+          <div class="book-header">
+            <%= link_to 'ワード一覧へ', book_words_path(@book.id), class: "book-header-text" %>
+          </div>
           <div class="show-book-content">
             <%= @book.title %>
           </div>

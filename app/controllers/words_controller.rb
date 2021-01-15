@@ -1,5 +1,9 @@
 class WordsController < ApplicationController
-  before_action :set_word_book, ony: [:new, :create]
+  before_action :set_word_book, ony: [:index, :new, :create]
+
+  def index
+    @words = @book.words.order(created_at: :DESC)
+  end
 
   def new
     @word = Word.new

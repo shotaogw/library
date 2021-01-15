@@ -7,6 +7,54 @@
   margin: 20px 10vw 0 0;
 }
 
+/* words#indexのビュー */
+.word-book-wrap {
+  height: 60px;
+}
+
+.word-book-info {
+  margin: 20px;
+  float: right;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.word-book-info:before {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px #4b4b9c;
+}
+.word-book-info:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px #4b4b9c;
+}
+
+.word-book-title {
+  margin: 0 50px;
+  font-size: 26px;
+}
+
+.word-book-genre {
+  margin-right: 40px;
+  font-size: 15px;
+}
+
+.word-book-user {
+  margin-right: 20px;
+  font-size: 12px;
+}
+/* words#indexのビュー */
+
 .to-newbook-text {
   text-decoration: none;
   font-size: 24px;
