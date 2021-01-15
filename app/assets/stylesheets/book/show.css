@@ -58,6 +58,14 @@
   padding-top: 3vh;
 }
 
+.to-newword {
+  text-decoration: none;
+  color: #4040a3;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+}
+
 .show-book-content-user {
   position: absolute;
   right: 30px;

@@ -26,6 +26,9 @@
           <div class="show-book-content">
             <%= @book.genre.name %>
           </div>
+          <% if user_signed_in? && current_user == @book.user %>
+            <%= link_to "+ ワードを追加する", new_book_word_path(@book.id), class: "to-newword" %>
+          <% end %>
           <div class="show-book-content-user">
             <%= "by #{@book.user.nickname}" %>
           </div>
