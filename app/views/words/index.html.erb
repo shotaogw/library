@@ -17,6 +17,11 @@
       <div class="word">
         <% @words.each do |word| %>
           <div class="word-content">
+            <div class="word-cover">
+              <% if user_signed_in? && current_user == word.user %>
+                <%= link_to image_tag("/IMG_1520.PNG", class: "to-edit-word"), edit_book_word_path(word.book.id, word.id) %>
+              <% end %>
+            </div>
             <div class="word-name">
               <%= word.name %>
             </div>

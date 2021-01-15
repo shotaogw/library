@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-  before_action :set_word_book, ony: [:index, :new, :create]
+  before_action :set_word_book, ony: [:index, :new, :create, :edit, :update]
 
   def index
     @words = @book.words.order(created_at: :DESC)
@@ -16,6 +16,19 @@ class WordsController < ApplicationController
       redirect_to book_path(@book.id)
     else
       render :new
+    end
+  end
+
+  def edit
+    @word = @book.words.find(params[:id])
+  end
+
+  def update
+    @word = @book.words.find(params[:id])
+    if @word.update(word_params)
+      redirect_to book_words_path(@book.id)
+    else
+      render :edit
     end
   end
 

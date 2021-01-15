@@ -90,6 +90,27 @@
   top: 0;
 }
 
+.word-cover {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.to-edit-word {
+  width: 35px;
+  height: 35px;
+  margin-left: 20px;
+}
+
+.to-delete-word {
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
+}
+
 .word-name {
   font-size: 34px;
   position: absolute;
