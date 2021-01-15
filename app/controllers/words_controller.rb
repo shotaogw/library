@@ -28,5 +28,4 @@ class WordsController < ApplicationController
   def word_params
     params.require(:word).permit(:name, :info).merge(user_id: current_user.id, book_id: params[:book_id])
   end
-
 end

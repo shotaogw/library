@@ -6,17 +6,17 @@
     <div class="header">
       <%= render "layouts/header" %>
     </div>
-    <div class="new-book">
+    <div class="new-word">
       <%= form_with model: [@book, @word], url: book_words_path(@book.id), method: :post, local: true do |f| %>
-        <div class="new-book-text">
+        <div class="new-word-text">
           ワードを追加する
         </div>
         <%= render partial: 'layouts/error-messages', locals: { model: @word }, class: "book-error-alert" %>
-        <div class="new-book-content">
-          <div class="new-book-content-text">
+        <div class="new-word-content">
+          <div class="new-word-content-text">
             <p>単語</p>
           </div>
-          <%= f.text_area :name, class:"new-word-name", id:"book-title", placeholder:"単語（30文字まで)", maxlength:"30" %>
+          <%= f.text_area :name, class:"new-word-name", id:"book-title", placeholder:"単語（20文字まで)", maxlength:"20" %>
           <div class="new-book-content-text">
             <P>定義</p>
           </div>

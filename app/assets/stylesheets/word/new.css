@@ -1,0 +1,57 @@
+.new-word {
+  height: 550px;
+  width: 95%;
+  margin: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.new-word-text {
+  font-size: 28px;
+}
+
+.new-word-content {
+  width: 400px;
+  height: 370px;
+  position: relative;
+  background-color: rgb(231, 229, 229);
+}
+
+.new-word-content:before {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-top: solid 30px white;
+  border-left: solid 30px transparent;
+}
+
+.new-word-content:after {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-bottom: solid 30px #4040a3;
+  border-right: solid 30px transparent;
+  top: 0;
+}
+
+.new-word-content-text{
+  font-size: 22px;
+  padding-top: 22px;
+}
+
+.new-word-name {
+  width: 280px;
+  height: 70px;
+}
+
+.new-word-info {
+  width: 280px;
+  height: 120px;
+}

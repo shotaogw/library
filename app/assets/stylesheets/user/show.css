@@ -85,46 +85,5 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 20px;
-}
-
-.card-content {
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  width: 45%;
-  min-width: 350px;
-  max-width: 450px;
-  height: 80%;
-  min-height: 270px;
-  margin: 40px 20px;
-  position: relative;
-  background-color: rgb(231, 229, 229);
-}
-
-.card-content:before {
-  height: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  content: "";
-  border-top: solid 30px white;
-  border-left: solid 30px transparent;
-}
-.card-content:after {
-  height: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  content: "";
-  border-bottom: solid 30px #4040a3;
-  border-right: solid 30px transparent;
-  top: 0;
-}
-
-.card-name {
-  font-size: 36px;
-  word-wrap: break-word;
-  margin-top: 80px;
-  padding: 10px 30px;
+  margin: 0 30px;
 }

@@ -1,4 +1,4 @@
-/* bookの編集ビューやwordのビューにも使用 */
+/* bookの編集ビューにも使用 */
 
 .new-book {
   height: 550px;
@@ -16,31 +16,25 @@
 }
 
 .new-book-content {
-  text-align: center;
   width: 400px;
-  height: 360px;
+  height: 370px;
   position: relative;
-  background-color: rgb(231, 229, 229);
 }
 
-.new-book-content:before {
-  height: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  content: "";
-  border-top: solid 30px white;
-  border-left: solid 30px transparent;
+.book-content-log {
+  width: 400px;
+  height: 370px;
 }
-.new-book-content:after {
-  height: 0;
-  display: block;
+
+.book-form {
   position: absolute;
-  right: 0;
-  content: "";
-  border-bottom: solid 30px #4040a3;
-  border-right: solid 30px transparent;
-  top: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
 }
 
 .new-book-content-text{
@@ -52,20 +46,6 @@
   font-size: 20px;
   width: 280px;
   height: 120px;
-}
-
-.new-word-name {
-  width: 280px;
-  height: 70px;
-}
-
-.new-word-info {
-  width: 280px;
-  height: 120px;
-}
-
-.select-box {
-  height: 4vh;
 }
 
 .create-book-btn-wrap {

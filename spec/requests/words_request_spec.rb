@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "Words", type: :request do
-
+RSpec.describe 'Words', type: :request do
 end

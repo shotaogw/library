@@ -1,0 +1,112 @@
+.words {
+  text-align: center;
+}
+
+.word-book-wrap {
+  height: 60px;
+}
+
+.word-book-info {
+  margin: 20px;
+  float: right;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.word-book-info:before {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px #4b4b9c;
+}
+
+.word-book-info:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px #4b4b9c;
+}
+
+.word-book-title {
+  margin: 0 50px;
+  font-size: 26px;
+}
+
+.word-book-genre {
+  margin-right: 40px;
+  font-size: 15px;
+}
+
+.word-book-user {
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+.word {
+  height: 95%;
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.word-content {
+  text-align: center;
+  color: black;
+  width: 400px;
+  height: 300px;
+  margin: 40px 20px;
+  position: relative;
+  background-color: rgb(231, 229, 229);
+}
+
+.word-content:before {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-top: solid 30px white;
+  border-left: solid 30px transparent;
+}
+
+.word-content:after {
+  height: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  content: "";
+  border-bottom: solid 30px #4040a3;
+  border-right: solid 30px transparent;
+  top: 0;
+}
+
+.word-name {
+  font-size: 34px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+}
+
+.word-info {
+  width: 380px;
+  font-size: 21px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin: 20px -50% 0 0;
+  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+}

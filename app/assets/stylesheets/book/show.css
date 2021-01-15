@@ -17,44 +17,10 @@
   right: 70px;
 }
 
-.show-book {
-  height: 500px;
-  width: 600px;
-  display: flex;
-  justify-content: center;
-}
-
-.show-book-contents {
-  text-align: center;
-  width: 100%;
-  max-width: 450px;
-  height: 370px;
-  position: relative;
-  background-color: rgb(231, 229, 229);
-}
-
-.show-book-contents:before {
-  height: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  content: "";
-  border-top: solid 30px white;
-  border-left: solid 30px transparent;
-}
-.show-book-contents:after {
-  height: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  content: "";
-  border-bottom: solid 30px #4040a3;
-  border-right: solid 30px transparent;
-  top: 0;
-}
-
 .book-header {
-  height: 50px;
+  position: absolute;
+  top: -300px;
+  height: 20px;
   position: relative;
 }
 
@@ -63,25 +29,5 @@
   font-size: 14px;
   text-decoration: none;
   position: absolute;
-  top: 20px;
-  right: 40px;
-}
-
-.show-book-content{
-  font-size: 3vh;
-  padding-top: 3vh;
-}
-
-.to-newword {
-  text-decoration: none;
-  color: #4040a3;
-  position: absolute;
-  left: 30px;
-  bottom: 20px;
-}
-
-.show-book-content-user {
-  position: absolute;
-  right: 80px;
-  bottom: 80px;
+  right: 25px;
 }
