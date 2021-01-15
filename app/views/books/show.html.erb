@@ -18,16 +18,29 @@
       <% end %>
       </div>
 
-      <div class="show-book">
-        <div class="show-book-contents">
-          <div class="show-book-content">
+      <div class="book">
+        <div class="book-content">
+          <%= image_tag("/IMG_1517.PNG", class: "book-content-log") %>
+          <div class="book-header">
+            <%= link_to 'ワード一覧へ', book_words_path(@book.id), class: "book-header-text" %>
+          </div>
+          <div class="book-title">
             <%= @book.title %>
           </div>
-          <div class="show-book-content">
+          <div class="book-genre">
             <%= @book.genre.name %>
           </div>
-          <div class="show-book-content-user">
+          <div class="book-user">
             <%= "by #{@book.user.nickname}" %>
+          </div>
+          <div class="book-cover">
+            <div class="to-newword">
+            <% if user_signed_in? && current_user == @book.user %>
+              <%= link_to image_tag("/IMG_1514.PNG", class: "to-new-word"), new_book_word_path(@book.id) %>
+            <% end %>
+            </div>
+            <%= link_to image_tag("/IMG_1516.PNG", class: "book-chat-log"), '#' %>
+            <%= link_to image_tag("/IMG_1515.PNG", class: "book-bookmark-log"), '#' %>
           </div>
         </div>
       </div>

@@ -10,6 +10,11 @@ ja:
         title: タイトル
         genre_id: ジャンル
         user: ユーザー
+      word:
+        name: 単語
+        info: 定義
+        user: ユーザー
+        book: ブック
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

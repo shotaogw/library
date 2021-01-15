@@ -34,14 +34,24 @@
       <div class="card-wrap">
         <div class="card">
           <% @books.each do |book| %>
-            <%= link_to(book_path(book.id), class: "card-content") do %>
-              <div class="card-name">
+            <div class="book-content">
+              <%= link_to image_tag("/IMG_1517.PNG", class: "book-content-log"), book_path(book.id) %>
+              <div class="book-title">
                 <%= book.title %>
               </div>
-              <div class="card-sub-name">
+              <div class="book-genre">
                 <%= book.genre.name %>
               </div>
-            <% end %>
+              <div class="book-cover">
+                <div class="to-newword">
+                  <% if user_signed_in? && current_user == book.user %>
+                    <%= link_to image_tag("/IMG_1514.PNG", class: "to-new-word"), new_book_word_path(book.id) %>
+                  <% end %>
+                </div>
+                <%= link_to image_tag("/IMG_1516.PNG", class: "book-chat-log"), '#' %>
+                <%= link_to image_tag("/IMG_1515.PNG", class: "book-bookmark-log"), '#' %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>

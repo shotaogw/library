@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div>
+    <div class="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div class="words">
+      <div class="word-book-wrap">
+        <div class="word-book-info">
+          <div class="word-book-title"><%= @book.title %></div>
+          <div class="word-book-genre"><%= @book.genre.name %></div>
+          <div class="word-book-user"><%= "by #{@book.user.nickname}" %></div>
+        </div>
+      </div>
+      <div class="word">
+        <% @words.each do |word| %>
+          <div class="word-content">
+            <div class="word-name">
+              <%= word.name %>
+            </div>
+            <div class="word-info">
+              <%= word.info %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

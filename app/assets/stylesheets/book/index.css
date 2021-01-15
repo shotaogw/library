@@ -22,49 +22,25 @@
 
 .book {
   height: 95%;
-  margin: 20px;
+  margin: -10px 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .book-content {
-  text-align: center;
   color: black;
-  width: 45%;
-  min-width: 350px;
-  max-width: 450px;
-  height: 80%;
-  min-height: 270px;
-  margin: 40px 20px;
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  margin: 50px 20px;
   position: relative;
-  background-color: rgb(231, 229, 229);
 }
 
-.book-content:before {
-  height: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  content: "";
-  border-top: solid 30px white;
-  border-left: solid 30px transparent;
-}
-.book-content:after {
-  height: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  content: "";
-  border-bottom: solid 30px #4040a3;
-  border-right: solid 30px transparent;
-  top: 0;
-}
-
-.book-name {
+.book-title {
   font-size: 36px;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -73,8 +49,44 @@
 .book-genre {
   font-size: 24px;
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
-  margin-right: -50%;
+  margin: 20px -50% 0 0;
   transform: translate(-50%, -50%);
+}
+
+.book-user {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+}
+
+.book-cover {
+  position: absolute;
+  bottom: -60px;
+  display: flex;
+}
+
+.to-newword {
+  width: 35px;
+  height: 35px;
+  margin-left: 30px;
+}
+
+.to-new-word {
+  width: 35px;
+  height: 35px;
+  margin-left: 15px;
+}
+
+.book-chat-log {
+  width: 35px;
+  height: 35px;
+  margin-left: 120px;
+}
+
+.book-bookmark-log {
+  width: 35px;
+  height: 35px;
+  margin-left: 110px;
 }

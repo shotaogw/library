@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations',
                                     sessions: 'users/sessions' }
   resources :users, only: [:index, :show]
-  resources :books
+  resources :books do
+    resources :words, only: [:index, :new, :create]
+  end
 end

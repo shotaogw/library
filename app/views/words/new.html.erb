@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div>
+    <div class="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div class="new-word">
+      <%= form_with model: [@book, @word], url: book_words_path(@book.id), method: :post, local: true do |f| %>
+        <div class="new-word-text">
+          ワードを追加する
+        </div>
+        <%= render partial: 'layouts/error-messages', locals: { model: @word }, class: "book-error-alert" %>
+        <div class="new-word-content">
+          <div class="new-word-content-text">
+            <p>単語</p>
+          </div>
+          <%= f.text_area :name, class:"new-word-name", id:"book-title", placeholder:"単語（20文字まで)", maxlength:"20" %>
+          <div class="new-book-content-text">
+            <P>定義</p>
+          </div>
+          <%= f.text_area :info, class:"new-word-info", id:"book-title", placeholder:"定義（100文字まで)", maxlength:"100" %>
+        </div>
+        <div class='create-book-btn-wrap'>
+          <%= f.submit "追加する", class: 'create-book-btn' %>
+        </div>
+        <%= link_to "戻る", book_path(@book.id), class: 'back-btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>

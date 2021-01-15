@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.valid?
       @book.save
-      redirect_to action: :index
+      redirect_to new_book_word_path(@book.id)
     else
       render :new
     end
