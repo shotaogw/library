@@ -20,6 +20,7 @@
             <div class="word-cover">
               <% if user_signed_in? && current_user == word.user %>
                 <%= link_to image_tag("/IMG_1520.PNG", class: "to-edit-word"), edit_book_word_path(word.book.id, word.id) %>
+                <%= link_to image_tag("/IMG_1521.PNG", class: "to-delete-word"), book_word_path(word.book.id, word.id), method: :delete %>
               <% end %>
             </div>
             <div class="word-name">

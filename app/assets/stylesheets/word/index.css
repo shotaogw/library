@@ -94,7 +94,7 @@
   height: 40px;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   display: flex;
   justify-content: space-around;
 }
@@ -112,22 +112,22 @@
 }
 
 .word-name {
-  font-size: 34px;
+  font-size: 28px;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .word-info {
   width: 380px;
-  font-size: 21px;
+  font-size: 18px;
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
   margin: 20px -50% 0 0;
   transform: translate(-50%, -50%);
-  word-wrap: break-word;
+  word-break: break-all;
 }

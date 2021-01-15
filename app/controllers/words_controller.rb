@@ -1,5 +1,7 @@
 class WordsController < ApplicationController
-  before_action :set_word_book, ony: [:index, :new, :create, :edit, :update]
+  before_action :set_word_book, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :set_word, only: [:edit, :update, :destroy]
+  before_action :move_to_home, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @words = @book.words.order(created_at: :DESC)
@@ -20,11 +22,9 @@ class WordsController < ApplicationController
   end
 
   def edit
-    @word = @book.words.find(params[:id])
   end
 
   def update
-    @word = @book.words.find(params[:id])
     if @word.update(word_params)
       redirect_to book_words_path(@book.id)
     else
@@ -32,10 +32,23 @@ class WordsController < ApplicationController
     end
   end
 
+  def destroy
+    @word.destroy
+    redirect_to action: :index
+  end
+
   private
 
   def set_word_book
     @book = Book.find(params[:book_id])
+  end
+
+  def set_word
+    @word = @book.words.find(params[:id])
+  end
+
+  def move_to_home
+    redirect_to controller: :books, action: :index if current_user.id != @book.user_id
   end
 
   def word_params
