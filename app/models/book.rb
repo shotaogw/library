@@ -4,6 +4,7 @@ class Book < ApplicationRecord
 
   belongs_to :user
   has_many :words, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
