@@ -60,6 +60,13 @@
   padding: 6px 0 0 20px;
 }
 
+.comment-destroy {
+  font-size: 10px;
+  text-decoration: none;
+  color: rgb(136, 135, 135);
+  margin: 6px 0 0 15px;
+}
+
 .comment-content {
   color: #434a54;
   font-size: 17px;

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :books do
     resources :words, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [:index, :create, :destroy]
   end
 end
