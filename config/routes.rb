@@ -4,6 +4,6 @@ Rails.application.routes.draw do
                                     sessions: 'users/sessions' }
   resources :users, only: [:index, :show]
   resources :books do
-    resources :words, only: [:index, :new, :create]
+    resources :words, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 end
