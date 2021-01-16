@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div>
+    <div class="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div class="comment">
+      <div class="comment-header">
+        <%= link_to "＜ #{@book.title}", book_path(@book.id), class: "back-show" %>
+        <b class="comment-title">コメント</b>
+      </div>
+
+      <div class="comment-note">
+        <p class="comment-note-text">
+          相手のことを考え丁寧なコメントを心がけましょう。
+        </p>
+      </div>
+
+      <div class="comments">
+        <% @comments.each do |comment| %>
+          <div class="comment-unit">
+            <div class="upper-comment">
+              <div class="comment-user">
+                <%= comment.user.nickname %>
+              </div>
+              <div class="comment-date">
+                <%= l(comment.created_at, format: :long) %>
+              </div>
+            </div>
+            <div class="lower-comment">
+              <div class="comment-content">
+                <%= safe_join("#{comment.content}".split("\n"),tag(:br)) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="comment-form">
+        <%= form_with model: [@book, @comment], url: book_comments_path(@book.id), method: :post, local: true do |f| %>
+          <%= f.text_area :content, class: "form-input", placeholder: "コメントを入力する", maxlength: 200 %>
+          <%= f.submit "送信", class: "form-submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
