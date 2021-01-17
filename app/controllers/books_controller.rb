@@ -40,6 +40,11 @@ class BooksController < ApplicationController
     redirect_to action: :index
   end
 
+  def search
+    @q = Book.ransack(params[:q])
+    @results = @q.result.order(created_at: :DESC)
+  end
+
   private
 
   def book_params

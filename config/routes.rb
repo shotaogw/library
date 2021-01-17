@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   resources :books do
     resources :words, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :comments, only: [:index, :create, :destroy]
+    collection do
+      get 'search'
+    end
   end
 end
