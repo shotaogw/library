@@ -25,7 +25,6 @@
 - belongs_to :user
 - has_many :words
 - has_many :comments
-- has_many :tags, through: book_tag_relations
 
 ## words テーブル
 | Column | Type       | Options                        |
@@ -49,21 +48,3 @@
 ### Association
 - belongs_to :user
 - belongs_to :book
-
-## book_tag_relations テーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| book   | references | null: false, foreign_key: true |
-| tag    | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :book
-- belongs_to :tag
-
-## tags テーブル
-| Column  | Type       | Options     |
-| ------- | ---------- | ----------- |
-| keyword | string     | null: false |
-
-### Association
-- has_many :books, through: book_tag_relations
