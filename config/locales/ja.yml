@@ -15,6 +15,10 @@ ja:
         info: 定義
         user: ユーザー
         book: ブック
+      comment:
+        content: コメント
+        user: ユーザー
+        book: ブック
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
