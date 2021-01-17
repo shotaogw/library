@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment_book, only: [:index, :create]
+  before_action :set_comment_book, only: [:index, :create, :destroy]
 
   def index
     @comment = Comment.new
@@ -15,6 +15,12 @@ class CommentsController < ApplicationController
       @comments = @book.comments.includes(:user).order(created_at: :DESC)
       render :index
     end
+  end
+
+  def destroy
+    comment = @book.comments.find(params[:id])
+    comment.destroy
+    redirect_to action: :index
   end
 
   private
