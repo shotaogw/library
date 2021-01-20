@@ -1,9 +1,20 @@
+.comment {
+  position: fixed;
+  overflow-y: scroll;
+  top: 150px;
+  left: 300px;
+}
+
+.comment-wrap {
+  height: 100vh;
+  width: calc(100vw - 300px);
+}
+
 .comment-header {
   background-color: #ffffff;
   height: 40px;
   border-bottom: 1px solid #eeeeee;
   padding-top: 5px;
-  text-align: center;
   position: relative;
 }
 
@@ -17,12 +28,17 @@
 }
 
 .comment-title {
+  min-width: 450px;
+  text-align: center;
+}
+
+.comment-title-text {
   font-size: 22px;
 }
 
 .comment-note {
   height: 30px;
-  min-width: 400px;
+  min-width: 450px;
 }
 
 .comment-note-text {
@@ -36,7 +52,7 @@
 /* コメント一覧 */
 .comments {
   background-color: #eeeeee;
-  height: calc(100vh - 150px - 40px - 30px - 40px);
+  height: calc(100vh - 150px - 40px - 30px - 60px);
   border-bottom: 1px solid #dddddd;
   overflow: scroll;
 }
@@ -85,7 +101,8 @@
   background-color: #eeeeee;
   border: none;
   height: 35px;
-  width: calc(100vw - 300px - 90px);
+  width: calc(100vw - 300px - 100px);
+  min-width: 310px;
   padding: 5px 0 0 15px;
   margin: 10px;
 }
@@ -98,7 +115,7 @@
   height: 35px;
   width: 60px;
   padding: 0 15px;
+  margin: 10px;
   position: absolute;
   right: 10px;
-  bottom: -5px;
 }

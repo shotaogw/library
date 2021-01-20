@@ -10,7 +10,6 @@
 }
 
 .error-message {
-  margin: 0.1vh 5% 0.1vh 8%;
   color: red;
-  font-size: 1.2vmax;
+  font-size: 12px;
 }
