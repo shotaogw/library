@@ -2,50 +2,57 @@
   <div class="side-bar">
     <%= render "layouts/side-bar" %>
   </div>
-  <div>
-    <div class="header">
+  <div class="main">
+    <div class="main-wrap">
       <%= render "layouts/header" %>
-    </div>
-    <div class="comment">
-      <div class="comment-header">
-        <%= link_to "＜ #{@book.title}", book_path(@book.id), class: "back-show" %>
-        <b class="comment-title">コメント</b>
-      </div>
 
-      <div class="comment-note">
-        <p class="comment-note-text">
-          相手のことを考え丁寧なコメントを心がけましょう。
-        </p>
-      </div>
-
-      <div class="comments">
-        <% @comments.each do |comment| %>
-          <div class="comment-unit">
-            <div class="upper-comment">
-              <div class="comment-user">
-                <%= comment.user.nickname %>
-              </div>
-              <div class="comment-date">
-                <%= l(comment.created_at, format: :long) %>
-              </div>
-              <% if user_signed_in? && comment.user_id == current_user.id %>
-                <%= link_to '送信取消', book_comment_path(comment.book.id, comment.id), method: :delete, class: "comment-destroy" %>
-              <% end %>
-            </div>
-            <div class="lower-comment">
-              <div class="comment-content">
-                <%= safe_join("#{comment.content}".split("\n"),tag(:br)) %>
-              </div>
+      <div class="comment">
+        <div class="comment-wrap">
+          <div class="comment-header">
+            <%= link_to truncate(("＜ #{@book.title}"), length: 10), book_path(@book.id), class: "back-show" %>
+            <div class="comment-title">
+              <b class="comment-title-text">
+                コメント
+              </b>
             </div>
           </div>
-        <% end %>
-      </div>
 
-      <div class="comment-form">
-        <%= form_with model: [@book, @comment], url: book_comments_path(@book.id), method: :post, local: true do |f| %>
-          <%= f.text_area :content, class: "form-input", placeholder: "コメントを入力する", maxlength: 200 %>
-          <%= f.submit "送信", class: "form-submit" %>
-        <% end %>
+          <div class="comment-note">
+            <p class="comment-note-text">
+              相手のことを考え丁寧なコメントを心がけましょう。
+            </p>
+          </div>
+
+          <div class="comments">
+            <% @comments.each do |comment| %>
+              <div class="comment-unit">
+                <div class="upper-comment">
+                  <div class="comment-user">
+                    <%= comment.user.nickname %>
+                  </div>
+                  <div class="comment-date">
+                    <%= l(comment.created_at, format: :long) %>
+                  </div>
+                  <% if user_signed_in? && comment.user_id == current_user.id %>
+                    <%= link_to '送信取消', book_comment_path(comment.book.id, comment.id), method: :delete, class: "comment-destroy" %>
+                  <% end %>
+                </div>
+                <div class="lower-comment">
+                  <div class="comment-content">
+                    <%= safe_join("#{comment.content}".split("\n"),tag(:br)) %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="comment-form">
+            <%= form_with model: [@book, @comment], url: book_comments_path(@book.id), method: :post, local: true do |f| %>
+              <%= f.text_area :content, class: "form-input", placeholder: "コメントを入力する", maxlength: 200 %>
+              <%= f.submit "送信", class: "form-submit" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

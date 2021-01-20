@@ -2,34 +2,15 @@
   <div class="side-bar">
     <%= render "layouts/side-bar" %>
   </div>
-  <div>
-    <div class="header">
+  <div class="main">
+    <div class="main-wrap">
       <%= render "layouts/header" %>
-    </div>
-    <div class="new-book">
-      <%= form_with model: @book, url: book_path(@book.id), method: :put, local: true do |f| %>
+      <div class="new-book">
         <div class="new-book-text">
           ブックを編集する
         </div>
-        <%= render partial: 'layouts/error-messages', locals: { model: @book }, class: "book-error-alert" %>
-        <div class="new-book-content">
-          <%= image_tag("/IMG_1517.PNG", class: "book-content-log") %>
-          <div class="book-form">
-            <div class="new-book-content-text">
-              <p>タイトル</p>
-            </div>
-            <%= f.text_area :title, class:"new-book-title", id:"book-title", placeholder:"タイトル（20文字まで)", maxlength:"20" %>
-            <div class="new-book-content-text">
-              <P>ジャンル</p>
-            </div>
-            <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
-          </div>
-        </div>
-        <div class='create-book-btn-wrap'>
-          <%= f.submit "更新する", class: 'create-book-btn' %>
-        </div>
-        <%= link_to "戻る", book_path(@book.id), class: 'back-btn' %>
-      <% end %>
+        <%= render partial: "layouts/form_book", locals: { book: @book } %>
+      </div>
     </div>
   </div>
 </div>

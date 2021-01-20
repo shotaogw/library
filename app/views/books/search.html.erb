@@ -2,40 +2,23 @@
   <div class="side-bar">
     <%= render "layouts/side-bar" %>
   </div>
-  <div>
-    <div class="header">
+  <div class="main">
+    <div class="main-wrap">
       <%= render "layouts/header" %>
-    </div>
-    <div class="books">
-      <%= search_form_for @q, url: search_books_path, class: "search-form" do |form| %>
-        <%= form.search_field :title_cont, placeholder: "   検索する", class: "search-input" %>
-        <%= form.select :genre_id_eq, options_from_collection_for_select(Genre.all, :id, :name) %>
-        <%= form.submit "検索", class: "search-btn" %>
-      <% end %>
-      <div class="book">
-        <% @results.each do |result| %>
-          <div class="book-content">
-            <%= link_to image_tag("/IMG_1517.PNG", class: "book-content-log"), book_path(result.id) %>
-            <div class="book-title">
-              <%= result.title %>
-            </div>
-            <div class="book-genre">
-              <%= result.genre.name %>
-            </div>
-            <div class="book-user">
-              <%= "by #{result.user.nickname}" %>
-            </div>
-            <div class="book-cover">
-              <div class="to-newword">
-              <% if user_signed_in? && current_user == result.user %>
-                <%= link_to image_tag("/IMG_1514.PNG", class: "to-new-word"), new_book_word_path(result.id) %>
-              <% end %>
-              </div>
-              <%= link_to image_tag("/IMG_1516.PNG", class: "book-chat-log"), book_comments_path(result.id) %>
-              <%= link_to image_tag("/IMG_1515.PNG", class: "book-bookmark-log"), '#' %>
-            </div>
+      <div class="books">
+        <div class="search-wrap">
+          <div class="breadcrumbs">
+            <%= '検索' %>
           </div>
-        <% end %>
+          <%= search_form_for @q, url: search_books_path, class: "search-form" do |form| %>
+            <%= form.search_field :title_cont, placeholder: "   検索する", class: "search-input" %>
+            <%= form.select :genre_id_eq, options_from_collection_for_select(Genre.all, :id, :name) %>
+            <%= form.submit "検索", class: "search-btn" %>
+          <% end %>
+        </div>
+        <div class="book-wrap">
+          <%= render partial: "layouts/book", collection: @results, as: "book" %>
+        </div>
       </div>
     </div>
   </div>

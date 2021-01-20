@@ -2,46 +2,28 @@
   <div class="side-bar">
     <%= render "layouts/side-bar" %>
   </div>
-  <div>
-    <div class="header">
+  <div class="main">
+    <div class="main-wrap">
       <%= render "layouts/header" %>
-    </div>
-    <div class="show-book-wrap">
-
-      <%# ブックを作成したユーザーにのみ表示する %>
-      <div class="edit-book">
-      <% if user_signed_in? && current_user == @book.user %>
-        <div class="to-editbook">
-          <%= link_to '編集する', edit_book_path(@book.id), class: "to-newbook-text" %>
-          <%= link_to '削除する', book_path(@book.id), method: :delete, class: "to-newbook-text" %>
+      <div class="show-book-wraps">
+        <%# ブックを作成したユーザーにのみ表示する %>
+        <div class="breadcrumbs-show">
+          <div class="breadcrumbs-wrap">
+            <%= link_to 'ホーム', books_path, class: "breadcrumbs" %>
+            <%= "＞ ブック詳細" %>
+          </div>
+          <div class="to-editbook">
+          <% if user_signed_in? && current_user == @book.user %>
+            <%= link_to 'Edit', edit_book_path(@book.id), class: "to-newbook-text" %>
+            <%= link_to 'Delete', book_path(@book.id), method: :delete, class: "to-newbook-text" %>
+          <% end %>
+          </div>
         </div>
-      <% end %>
-      </div>
-
-      <div class="book">
-        <div class="book-content">
-          <%= image_tag("/IMG_1517.PNG", class: "book-content-log") %>
+        <div class="show-book-wrap">
           <div class="book-header">
-            <%= link_to 'ワード一覧へ', book_words_path(@book.id), class: "book-header-text" %>
+            <%= link_to 'ワード一覧', book_words_path(@book.id), class: "book-header-text" %>
           </div>
-          <div class="book-title">
-            <%= @book.title %>
-          </div>
-          <div class="book-genre">
-            <%= @book.genre.name %>
-          </div>
-          <div class="book-user">
-            <%= "by #{@book.user.nickname}" %>
-          </div>
-          <div class="book-cover">
-            <div class="to-newword">
-            <% if user_signed_in? && current_user == @book.user %>
-              <%= link_to image_tag("/IMG_1514.PNG", class: "to-new-word"), new_book_word_path(@book.id) %>
-            <% end %>
-            </div>
-            <%= link_to image_tag("/IMG_1516.PNG", class: "book-chat-log"), book_comments_path(@book.id) %>
-            <%= link_to image_tag("/IMG_1515.PNG", class: "book-bookmark-log"), '#' %>
-          </div>
+          <%= render partial: "layouts/book", locals:{ book: @book } %>
         </div>
       </div>
     </div>

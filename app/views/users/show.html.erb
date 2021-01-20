@@ -2,57 +2,40 @@
   <div class="side-bar">
     <%= render "layouts/side-bar" %>
   </div>
-  <div>
-    <div class="header">
+  <div class="main">
+    <div class="main-wrap">
       <%= render "layouts/header" %>
-    </div>
-    <div class="cards">
-      <div class="user-info">
-        <div class="upper">
-          <div class="user-nickname">
-            <%= @user.nickname %>
-          </div>
-          <ul class="user-edit">
-            <% if user_signed_in? && current_user == @user %>
-              <li><%= link_to '編集する', edit_user_registration_path(current_user.id), class: "user-edit-link" %></li>
-              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "log-out" %></li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="middle">
-          <div class="user-profile">
-            <%= @user.profile %>
-          </div>
-        </div>
-        <div class="lower">
-          <%= link_to 'books()', '#', class: "card-type-select" %>
-          <%= link_to 'words()', '#', class: "card-type-select" %>
-          <%= link_to 'bookmarks()', '#', class: "card-type-select" %>
-        </div>
-      </div>
-      <%# booksの表示 %>
-      <div class="card-wrap">
-        <div class="card">
-          <% @books.each do |book| %>
-            <div class="book-content">
-              <%= link_to image_tag("/IMG_1517.PNG", class: "book-content-log"), book_path(book.id) %>
-              <div class="book-title">
-                <%= book.title %>
-              </div>
-              <div class="book-genre">
-                <%= book.genre.name %>
-              </div>
-              <div class="book-cover">
-                <div class="to-newword">
-                  <% if user_signed_in? && current_user == book.user %>
-                    <%= link_to image_tag("/IMG_1514.PNG", class: "to-new-word"), new_book_word_path(book.id) %>
-                  <% end %>
-                </div>
-                <%= link_to image_tag("/IMG_1516.PNG", class: "book-chat-log"), book_comments_path(book.id) %>
-                <%= link_to image_tag("/IMG_1515.PNG", class: "book-bookmark-log"), '#' %>
-              </div>
+      <div class="cards">
+        <div class="user-info">
+          <div class="upper">
+            <div class="user-nickname">
+              <%= @user.nickname %>
             </div>
-          <% end %>
+            <ul class="user-edit">
+              <% if user_signed_in? && current_user == @user %>
+                <li><%= link_to 'Edit', edit_user_registration_path(current_user.id), class: "user-edit-link" %></li>
+                <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="middle">
+            <div class="user-profile">
+              <%= @user.profile %>
+            </div>
+          </div>
+          <div class="lower">
+            <%= link_to "books(#{Book.where(user_id: current_user.id).count})", user_path(current_user.id), class: "card-type-select" %>
+            <%= link_to "words(#{Word.where(user_id: current_user.id).count})", book_word_path(@user.books.ids, @user.words.ids), class: "card-type-select" %>
+            <%= link_to 'bookmarks()', '#', class: "card-type-select" %>
+          </div>
+        </div>
+        <%# booksの表示 %>
+        <div class="card-wrap">
+          <div class="card">
+            <div class="book-wrap">
+              <%= render partial: "layouts/book", collection: @books %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
