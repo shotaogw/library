@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @books = Book.all.order(created_at: :DESC)
+    @books = Book.all.order(created_at: :DESC).page(params[:page]).per(10)
   end
 
   def new
@@ -42,7 +42,7 @@ class BooksController < ApplicationController
 
   def search
     @q = Book.ransack(params[:q])
-    @results = @q.result.order(created_at: :DESC)
+    @results = @q.result.order(created_at: :DESC).page(params[:page]).per(10)
   end
 
   private

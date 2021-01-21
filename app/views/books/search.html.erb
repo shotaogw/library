@@ -10,14 +10,20 @@
           <div class="breadcrumbs">
             <%= '検索' %>
           </div>
-          <%= search_form_for @q, url: search_books_path, class: "search-form" do |form| %>
-            <%= form.search_field :title_cont, placeholder: "   検索する", class: "search-input" %>
-            <%= form.select :genre_id_eq, options_from_collection_for_select(Genre.all, :id, :name) %>
-            <%= form.submit "検索", class: "search-btn" %>
-          <% end %>
+          <div class="search-rightwrap">
+            <div class="search-note">※ジャンルを選択してください</div>
+            <%= search_form_for @q, url: search_books_path, class: "search-form" do |form| %>
+              <%= form.search_field :title_cont, placeholder: "   検索する", class: "search-input" %>
+              <%= form.select :genre_id_eq, options_from_collection_for_select(Genre.all, :id, :name) %>
+              <%= form.submit "検索", class: "search-btn" %>
+            <% end %>
+          </div>
         </div>
         <div class="book-wrap">
           <%= render partial: "layouts/book", collection: @results, as: "book" %>
+        </div>
+        <div class="pagenation">
+          <%= paginate @results %>
         </div>
       </div>
     </div>

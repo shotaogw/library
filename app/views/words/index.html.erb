@@ -21,6 +21,9 @@
         <div class="book-wrap">
           <%= render partial: "layouts/word", collection: @words %>
         </div>
+        <div class="pagenation">
+          <%= paginate @words %>
+        </div>
       </div>
     </div>
   </div>

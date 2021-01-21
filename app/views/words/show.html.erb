@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div class="main">
+    <div class="main-wrap">
+      <%= render "layouts/header" %>
+      <div class="cards">
+        <div class="user-info">
+          <div class="upper">
+            <div class="user-nickname">
+              <%= @user.nickname %>
+            </div>
+            <ul class="user-edit">
+              <% if user_signed_in? && current_user == @user %>
+                <li><%= link_to 'Edit', edit_user_registration_path(current_user.id), class: "user-edit-link" %></li>
+                <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="middle">
+            <div class="user-profile">
+              <%= @user.profile %>
+            </div>
+          </div>
+          <div class="lower">
+            <%= link_to "books(#{Book.where(user_id: current_user.id).count})", user_path(@user.id), class: "card-type-select" %>
+            <%= link_to "words(#{Word.where(user_id: current_user.id).count})", book_word_path(@books.ids, @words.ids), class: "card-type-select" %>
+            <%= link_to 'bookmarks()', '#', class: "card-type-select" %>
+          </div>
+        </div>
+        <%# booksの表示 %>
+        <div class="card-wrap">
+          <div class="card">
+            <div class="book-wrap">
+              <%= render partial: "layouts/word", collection: @words %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

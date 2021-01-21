@@ -31,11 +31,15 @@
 }
 
 .book-wrap {
-  margin: 20px 40px 50px;
+  margin: 20px 40px 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.pagenation {
+  height: 50px;
 }
 
 .book {
@@ -114,13 +118,21 @@
 
 /*searchビュー*/
 .search-wrap {
+  min-width: 700px;
   display: flex;
   justify-content: space-between;
 }
 
+.search-rightwrap {
+}
+
+.search-note {
+  color: rgb(151, 151, 151);
+  font-size: 14px;
+}
+
 .search-form {
-  min-width: 600px;
-  height: 60px;
+  height: 40px;
   margin: 0 50px;
   display: flex;
   align-items: center;
@@ -138,5 +150,5 @@
   height: 35px;
   width: 50px;
   margin-left: 20px;
-  background-color: #96b2ee;
+  background-color: #8bb0ff;
 }

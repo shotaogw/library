@@ -18,6 +18,9 @@
         <div class="book-wrap">
           <%= render partial: "layouts/book", collection: @books %>
         </div>
+        <div class="pagenation">
+          <%= paginate @books %>
+        </div>
       </div>
     </div>
   </div>
