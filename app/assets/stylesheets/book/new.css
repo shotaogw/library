@@ -1,13 +1,10 @@
-/* bookの編集ビューにも使用 */
-
 .new-book {
-  height: 550px;
-  width: 95%;
-  margin: 20px 30px;
+  margin: 30px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -15,29 +12,7 @@
   font-size: 28px;
 }
 
-.new-book-content {
-  width: 400px;
-  height: 370px;
-  position: relative;
-}
-
-.book-content-log {
-  width: 400px;
-  height: 370px;
-}
-
-.book-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
-}
-
-.new-book-content-text{
+.book-form-text{
   font-size: 22px;
   padding-top: 22px;
 }
@@ -49,7 +24,9 @@
 }
 
 .create-book-btn-wrap {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .create-book-btn {
@@ -59,6 +36,15 @@
   background-color: #20208a;
   border-radius: 5px;
   border: 3px double snow;
-  margin: 15px auto;
+  margin: 10px auto 20px;
   font-size: 16px;
+}
+
+.book-back-btn {
+  height: 30px;
+  width: 60px;
+  text-decoration: none;
+  background-color: rgb(196, 189, 189);
+  color: black;
+  border: 1px solid black;
 }

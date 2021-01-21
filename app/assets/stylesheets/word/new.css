@@ -1,11 +1,10 @@
 .new-word {
-  height: 550px;
-  width: 95%;
-  margin: 20px 30px;
+  margin: 20px 60px 30px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -16,6 +15,7 @@
 .new-word-content {
   width: 400px;
   height: 370px;
+  margin: 0 10px;
   position: relative;
   background-color: rgb(231, 229, 229);
 }

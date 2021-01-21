@@ -3,15 +3,25 @@
 }
 
 .to-newbook {
-  text-align: right;
-  margin: 20px 10vw 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 70px 0 0;
+}
+
+.breadcrumbs {
+  margin: 0 0 0 30px;
+  font-size: 22px;
+  text-decoration: none;
 }
 
 .to-newbook-text {
   text-decoration: none;
+  color: black;
   font-size: 24px;
-  color: #4040a3;
-  border: 2px solid #4040a3;
+  font-weight: 700;
+  margin-right: 20px;
+  border: 4px double black;
   border-radius: 10px;
   padding: 5px;
 }
@@ -20,82 +30,110 @@
   color: rgb(240, 52, 52);
 }
 
+.book-wrap {
+  margin: 20px 40px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagenation {
+  height: 50px;
+}
+
 .book {
-  height: 95%;
-  margin: -10px 20px;
+  height: 550px;
+  width: 400px;
+  margin: 0 30px 60px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color:rgb(238, 238, 238);
 }
 
 .book-content {
   color: black;
-  text-align: center;
   width: 400px;
-  height: 300px;
-  margin: 50px 20px;
+  height: 350px;
+  margin: 40px 10px 0;
   position: relative;
+  background-color: #fff;
 }
 
 .book-title {
   font-size: 34px;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
   word-break: break-all;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
 }
 
 .book-genre {
   font-size: 24px;
+  margin-top: 20px;
   position: absolute;
-  top: 75%;
+  top: 70%;
   left: 50%;
-  margin: 20px -50% 0 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
 }
 
-.book-user {
-  position: absolute;
-  right: 20px;
-  bottom: 0px;
+.book-subcontent {
+  height: 60px;
+  width: 360px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
 }
 
 .book-cover {
-  position: absolute;
-  bottom: -60px;
+  width: 360px;
   display: flex;
+  justify-content: space-around;
 }
 
 .to-newword {
   width: 35px;
   height: 35px;
-  margin-left: 30px;
 }
 
 .to-new-word {
   width: 35px;
   height: 35px;
-  margin-left: 15px;
 }
 
 .book-chat-log {
   width: 35px;
   height: 35px;
-  margin-left: 120px;
 }
 
 .book-bookmark-log {
   width: 35px;
   height: 35px;
-  margin-left: 110px;
 }
 
 /*searchビュー*/
+.search-wrap {
+  min-width: 700px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-rightwrap {
+}
+
+.search-note {
+  color: rgb(151, 151, 151);
+  font-size: 14px;
+}
+
 .search-form {
-  min-width: 600px;
-  height: 60px;
+  height: 40px;
+  margin: 0 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,5 +150,5 @@
   height: 35px;
   width: 50px;
   margin-left: 20px;
-  background-color: #6992E9;
+  background-color: #8bb0ff;
 }

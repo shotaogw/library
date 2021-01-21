@@ -2,39 +2,29 @@
   <div class="side-bar">
     <%= render "layouts/side-bar" %>
   </div>
-  <div>
-    <div class="header">
+  <div class="main">
+    <div class="main-wrap">
       <%= render "layouts/header" %>
-    </div>
-    <div class="words">
-      <div class="word-book-wrap">
-        <div class="word-book-info">
-          <div class="word-book-title"><%= @book.title %></div>
-          <div class="word-book-genre"><%= @book.genre.name %></div>
-          <div class="word-book-user"><%= "by #{@book.user.nickname}" %></div>
-        </div>
-      </div>
-      <div class="word">
-        <% @words.each do |word| %>
-          <div class="word-content">
-            <div class="word-cover">
-              <% if user_signed_in? && current_user == word.user %>
-                <%= link_to image_tag("/IMG_1520.PNG", class: "to-edit-word"), edit_book_word_path(word.book.id, word.id) %>
-                <%= link_to image_tag("/IMG_1521.PNG", class: "to-delete-word"), book_word_path(word.book.id, word.id), method: :delete %>
-              <% end %>
-            </div>
-            <div class="word-name">
-              <%= word.name %>
-            </div>
-            <div class="word-info">
-              <%= word.info %>
-            </div>
+      <div class="words">
+        <div class="word-book-wrap">
+          <div>
+            <%= link_to 'ホーム', books_path, class: "breadcrumbs-word" %> ＞
+            <%= link_to 'ブック詳細', book_path(@book.id), class: "breadcrumbs-word" %>
+            <%= "＞ ワード一覧" %>
           </div>
-        <% end %>
+          <div class="word-book-info">
+            <div class="word-book-title"><%= strip_tags(@book.title).truncate(10) %></div>
+            <div class="word-book-genre"><%= @book.genre.name %></div>
+            <div class="word-book-user"><%= "by #{@book.user.nickname}" %></div>
+          </div>
+        </div>
+        <div class="book-wrap">
+          <%= render partial: "layouts/word", collection: @words %>
+        </div>
+        <div class="pagenation">
+          <%= paginate @words %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

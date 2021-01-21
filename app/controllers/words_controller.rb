@@ -4,7 +4,7 @@ class WordsController < ApplicationController
   before_action :move_to_home, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @words = @book.words.order(created_at: :DESC)
+    @words = @book.words.order(created_at: :DESC).page(params[:page]).per(10)
   end
 
   def new
@@ -35,6 +35,12 @@ class WordsController < ApplicationController
   def destroy
     @word.destroy
     redirect_to action: :index
+  end
+
+  def show
+    @user = current_user
+    @words = @user.words.order(created_at: :DESC)
+    @books = @user.books
   end
 
   private

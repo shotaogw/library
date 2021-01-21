@@ -2,41 +2,25 @@
   <div class="side-bar">
     <%= render "layouts/side-bar" %>
   </div>
-  <div>
-    <div class="header">
+  <div class="main">
+    <div class="main-wrap">
       <%= render "layouts/header" %>
-    </div>
-    <div class="books">
-      <div class="to-newbook">
-        <%= link_to '新規作成', new_book_path, class: "to-newbook-text" %>
-      </div>
-      <div class="delete-notice">
-        <%= flash[:notice] %>
-      </div>
-      <div class="book">
-        <% @books.each do |book| %>
-          <div class="book-content">
-            <%= link_to image_tag("/IMG_1517.PNG", class: "book-content-log"), book_path(book.id) %>
-            <div class="book-title">
-              <%= book.title %>
-            </div>
-            <div class="book-genre">
-              <%= book.genre.name %>
-            </div>
-            <div class="book-user">
-              <%= "by #{book.user.nickname}" %>
-            </div>
-            <div class="book-cover">
-              <div class="to-newword">
-              <% if user_signed_in? && current_user == book.user %>
-                <%= link_to image_tag("/IMG_1514.PNG", class: "to-new-word"), new_book_word_path(book.id) %>
-              <% end %>
-              </div>
-              <%= link_to image_tag("/IMG_1516.PNG", class: "book-chat-log"), book_comments_path(book.id) %>
-              <%= link_to image_tag("/IMG_1515.PNG", class: "book-bookmark-log"), '#' %>
-            </div>
+      <div class="books">
+        <div class="to-newbook">
+          <div class="breadcrumbs">
+            <%= 'ホーム' %>
           </div>
-        <% end %>
+          <%= link_to 'New book', new_book_path, class: "to-newbook-text" %>
+        </div>
+        <div class="delete-notice">
+          <%= flash[:notice] %>
+        </div>
+        <div class="book-wrap">
+          <%= render partial: "layouts/book", collection: @books %>
+        </div>
+        <div class="pagenation">
+          <%= paginate @books %>
+        </div>
       </div>
     </div>
   </div>

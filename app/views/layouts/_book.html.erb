@@ -1,0 +1,27 @@
+<div class="book">
+  <%= link_to book_path(book.id), class: "book-content" do %>
+    <div class="book-title">
+      <%= book.title %>
+    </div>
+    <div class="book-genre">
+      <%= book.genre.name %>
+    </div>
+  <% end %>
+  <div class="book-subcontent">
+    <div class="book-date">
+      <%= l(book.created_at, format: :long) %>
+    </div>
+    <div class="book-user">
+      <%= "by #{book.user.nickname}" %>
+    </div>
+  </div>
+  <div class="book-cover">
+    <div class="to-newword">
+    <% if user_signed_in? && current_user == book.user %>
+      <%= link_to image_tag("/IMG_1514.PNG", class: "to-new-word"), new_book_word_path(book.id) %>
+    <% end %>
+    </div>
+    <%= link_to image_tag("/IMG_1516.PNG", class: "book-chat-log"), book_comments_path(book.id) %>
+    <%= link_to image_tag("/IMG_1515.PNG", class: "book-bookmark-log"), '#' %>
+  </div>
+</div>

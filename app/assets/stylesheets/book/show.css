@@ -1,33 +1,40 @@
-.show-book-wrap {
+.show-book-wraps {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.edit-book {
-  width: 100%;
-  height: 90px;
-  position: relative;
+.breadcrumbs-show {
+  width: calc(100vw - 300px);
+  min-width: 600px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 20px 20px;
 }
 
 .to-editbook {
-  margin: 20px;
-  position: absolute;
-  right: 70px;
+  margin: 30px 60px 0 0;
+}
+
+.show-book-wrap {
+  margin: 0px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .book-header {
   position: absolute;
-  top: -300px;
+  top: 10px;
+  right: 90px;
+  width: 80px;
   height: 20px;
-  position: relative;
 }
 
 .book-header-text {
-  color: black;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
-  position: absolute;
-  right: 25px;
 }
