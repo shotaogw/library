@@ -19,6 +19,9 @@ ja:
         content: コメント
         user: ユーザー
         book: ブック
+      bookmark:
+        user: ユーザー
+        book: ブック
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
