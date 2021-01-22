@@ -116,6 +116,11 @@
   height: 35px;
 }
 
+.remove-bookmark-log {
+  width: 35px;
+  height: 35px;
+}
+
 /*searchビュー*/
 .search-wrap {
   min-width: 700px;

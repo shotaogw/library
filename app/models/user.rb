@@ -16,4 +16,6 @@ class User < ApplicationRecord
   has_many :books
   has_many :words
   has_many :comments
+  has_many :bookmarks
+  has_many :bookmarked_books, through: :bookmarks, source: :book
 end

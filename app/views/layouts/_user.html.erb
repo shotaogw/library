@@ -1,0 +1,21 @@
+<div class="user-info">
+  <div class="upper">
+    <div class="user-nickname">
+      <%= user.nickname %>
+    </div>
+    <div class="user-edit">
+      <div><%= link_to 'Edit', edit_user_registration_path(current_user.id), class: "user-edit-link" %></div>
+      <div><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "log-out" %></div>
+    </div>
+  </div>
+  <div class="middle">
+    <div class="user-profile">
+      <%= user.profile %>
+    </div>
+  </div>
+  <div class="lower">
+    <%= link_to "books(#{Book.where(user_id: current_user.id).count})", user_path(current_user.id), class: "card-type-select" %>
+    <%= link_to "words(#{Word.where(user_id: current_user.id).count})", book_word_path(user.books.ids, user.words.ids), class: "card-type-select" %>
+    <%= link_to "bookmarks(#{Bookmark.where(user_id: current_user.id).count})", book_bookmarks_path(user.bookmarked_books.ids), class: "card-type-select" %>
+  </div>
+</div>

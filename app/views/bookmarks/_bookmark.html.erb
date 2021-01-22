@@ -1,0 +1,7 @@
+<% if book.bookmarked_by?(current_user) %>
+  <%= link_to image_tag("/IMG_1555.PNG", class: "remove-bookmark-log"), book_bookmarks_path(book.id), method: :delete, remote: true %>
+  <span style="color: rgb(151, 151, 151);"><%= "(#{book.bookmarks.count})" %></span>
+<% else %>
+  <%= link_to image_tag("/IMG_1556.PNG", class: "book-bookmark-log"), book_bookmarks_path(book.id), method: :post, remote: true %>
+  <span style="color: rgb(151, 151, 151);"><%= "(#{book.bookmarks.count})" %></span>
+<% end %>

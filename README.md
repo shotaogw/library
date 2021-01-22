@@ -13,6 +13,7 @@
 - has_many :books
 - has_many :words
 - has_many :comments
+- has_many :bookmarks
 
 ## books テーブル
 | Column   | Type       | Options                        |
@@ -25,6 +26,7 @@
 - belongs_to :user
 - has_many :words
 - has_many :comments
+- has_many :bookmarks
 
 ## words テーブル
 | Column | Type       | Options                        |
@@ -42,6 +44,16 @@
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | content | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| book    | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :book
+
+## bookmarks テーブル
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
 | book    | references | null: false, foreign_key: true |
 
