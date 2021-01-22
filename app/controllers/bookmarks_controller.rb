@@ -1,6 +1,11 @@
 class BookmarksController < ApplicationController
   before_action :set_book, only: [:create, :destroy]
 
+  def show
+    @user = current_user
+    @books = @user.bookmarked_books.order(created_at: :DESC)
+  end
+
   def create
     bookmark = current_user.bookmarks.build(book_id: params[:book_id])
     bookmark.save

@@ -4,7 +4,7 @@ class WordsController < ApplicationController
   before_action :move_to_home, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @words = @book.words.order(created_at: :DESC).page(params[:page]).per(10)
+    @words = @book.words.includes(:user).order(created_at: :DESC).page(params[:page]).per(10)
   end
 
   def new
