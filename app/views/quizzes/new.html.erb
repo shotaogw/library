@@ -1,0 +1,60 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div class="main">
+    <div class="main-wrap">
+      <%= render "layouts/header" %>
+      <div class="words">
+        <div class="word-index-header">
+          <div class="quit-quiz-wrap">
+            <%= link_to 'テストを中断する', quiz_index_books_path, class: "quit-quiz" %>
+          </div>
+          <div class="word-book-info">
+            <div class="word-book-title"><%= strip_tags(@book.title).truncate(10) %></div>
+            <div class="word-book-genre"><%= @book.genre.name %></div>
+            <div class="word-book-user"><%= "by #{@book.user.nickname}" %></div>
+          </div>
+        </div>
+        <div class="quiz-wrap">
+          <% @quizzes.each do |quiz| %>
+            <div class="quiz">
+              <div class='container'>
+                <div class='flip_box'>
+                  <div class='front'>
+                    <div class="word-content">
+                      <div class="quiz-name">
+                        <%= quiz.name %>
+                      </div>
+                      <div class="quiz-btn-wrap">
+                        <div class="answer-btn" id="correct">◯</div>
+                        <div class="answer-btn" id="incorrect">×</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='back'>
+                    <div class="quiz-back-content">
+                      <div class="quiz-info">
+                        <%= quiz.info %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='r_wrap'>
+                  <div class='s_round'>
+                    <div class='s_arrow'>→</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% if @quizzes.present? %>
+            <div class="grade-wrap">
+              <%= link_to '採点する！', book_quiz_path(@book.id), class: "grade" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

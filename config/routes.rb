@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     resource :bookmarks, only: [:show, :create, :destroy]
     resources :comments, only: [:index, :create, :destroy]
     collection do
-      get 'search'
+      get 'search','quiz_index'
     end
+    resource :quiz, only: [:new, :show]
   end
 end

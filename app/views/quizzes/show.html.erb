@@ -7,10 +7,7 @@
       <%= render "layouts/header" %>
       <div class="words">
         <div class="word-index-header">
-          <div class="word-index-left-header">
-            <%= link_to 'ホーム', books_path, class: "breadcrumbs-word" %> ＞
-            <%= link_to 'ブック詳細', book_path(@book.id), class: "breadcrumbs-word" %>
-            <%= "＞ ワード一覧" %>
+          <div class="quit-quiz-wrap">
           </div>
           <div class="word-book-info">
             <div class="word-book-title"><%= strip_tags(@book.title).truncate(10) %></div>
@@ -18,11 +15,17 @@
             <div class="word-book-user"><%= "by #{@book.user.nickname}" %></div>
           </div>
         </div>
-        <div class="book-wrap">
-          <%= render partial: "layouts/word", collection: @words %>
-        </div>
-        <div class="pagenation">
-          <%= paginate @words %>
+        <div class="quiz-wrap">
+          <div class="quiz-result">
+            <div class="pie-chart" id="blue-circle"></div>
+            <div class="pie-chart" id="gray-circle"></div>
+            <div class="circle">
+              <div class="data-percent">5/10</div>
+            </div>
+          </div>
+          <div class="grade-wrap">
+            <%= link_to 'テストを終了する', quiz_index_books_path, class: "grade" %>
+          </div>
         </div>
       </div>
     </div>

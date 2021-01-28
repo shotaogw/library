@@ -2,11 +2,16 @@
   text-align: center;
 }
 
-.word-book-wrap {
+.word-index-header {
   display: flex;
   justify-content: space-between;
-  height: 80px;
-  margin: 10px 0 0 20px;
+  height: 70px;
+  margin-bottom:20px;
+}
+
+.word-index-left-header {
+  width: 300px;
+  height: 30px;
 }
 
 .breadcrumbs-word {
@@ -15,7 +20,8 @@
 }
 
 .word-book-info {
-  margin: 40px 20px 0;
+  min-width: 450px;
+  margin: 10px 20px 0;
   display: flex;
   align-items: center;
   position: relative;
@@ -24,7 +30,7 @@
 .word-book-info:after {
   position: absolute;
   content: '';
-  bottom: -5px;
+  bottom: 10px;
   left: 10px;
   width: 100%;
   border-bottom: solid 3px #4b4b9c;

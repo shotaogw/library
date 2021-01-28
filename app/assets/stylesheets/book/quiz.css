@@ -1,0 +1,262 @@
+.quiz-cover {
+  width: 300px;
+  height: 40px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #4242a8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quit-quiz-wrap {
+  width: 220px;
+  height: 50px;
+  margin: 20px 0 0 30px;
+}
+
+.quit-quiz {
+  font-size: 24px;
+  text-decoration: none;
+  border: 2px solid #4040a3;
+  border-radius: 5px;
+  padding: 10px;
+  color: #4040a3;
+}
+
+.quiz-wrap {
+  margin: 20px 40px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  margin: 20px 0px 30px;
+  flex-wrap: wrap;
+}
+
+.container,
+.flip-box {
+  width: 440px;
+  height: 350px;
+}
+
+.container,
+.flip_box {
+  position: relative;
+}
+
+.front,
+.back {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.container {
+  -moz-transform: perspective(1200px);
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+}
+
+.flip_box {
+  transition: all 0.5s ease-out;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.quiz-name {
+  width: 300px;
+  font-size: 30px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  word-break: break-all;
+}
+
+.quiz-btn-wrap {
+  width: 220px;
+  height: 60px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 34px;
+  color: white;
+}
+
+.answer-btn {
+  width: 80px;
+  height: 60px;
+  border: 4px double white;
+  border-radius: 8px;
+}
+
+#correct {
+  background-color: rgb(131, 230, 51);
+}
+
+#incorrect {
+  background-color: rgb(252, 52, 52);
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.quiz-back-content {
+  text-align: center;
+  color: black;
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+  position: relative;
+  background-color: #4040a3;
+}
+
+.quiz-back-content:before {
+  height: 0;
+  display: block;
+  position: absolute;
+  left: 0;
+  content: "";
+  border-top: solid 30px white;
+  border-right: solid 30px transparent;
+}
+
+.quiz-back-content:after {
+  height: 0;
+  display: block;
+  position: absolute;
+  left: 0;
+  content: "";
+  border-bottom: solid 30px rgb(231, 229, 229);
+  border-left: solid 30px transparent;
+  top: 0;
+}
+
+.quiz-info {
+  width: 300px;
+  font-size: 22px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: 20px -50% 0 0;
+  transform: translate(-50%, -50%);
+  word-break: break-all;
+}
+
+.flipped {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.r_wrap {
+  position: absolute;
+  right: 25px;
+  bottom: 40px;
+}
+
+.s_round {
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgb(231, 229, 229);
+  border-radius: 50%;
+  background-color: #4040a3;
+  transition: all 0.2s linear;
+}
+
+.s_arrow {
+  font-size: 32px;
+  color: white;
+  background-color: transparent;
+  transition: all 0.35s linear;
+}
+
+.s_arrow_rotate {
+  transform: rotate(-180deg);
+}
+
+.quiz-result {
+  width: 320px;
+  height: 400px;
+  position: relative;
+}
+
+.pie-chart {
+  width: 160px;
+  height: 320px;
+}
+
+#blue-circle {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  border-radius: 0 160px 160px 0;
+  transform: translate(-50%, -50%);
+  background-color: #7d7deb;
+}
+
+#gray-circle {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  border-radius: 160px 0 0 160px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(212, 211, 212);
+}
+
+.circle {
+  width: 300px;
+  height: 300px; 
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-percent {
+  font-size: 36px;
+  color: #7d7deb;
+}
+
+.grade-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grade {
+  width: 300px;
+  height: 40px;
+  margin: 30px auto 50px;
+  padding-top: 5px;
+  border: 2px solid #4040a3;
+  border-radius: 5px;
+  color: #4040a3;
+  font-size: 18px;
+  text-decoration: none;
+}
