@@ -10,6 +10,10 @@
   justify-content: center;
 }
 
+.quiz-cover:hover {
+  background-color: #9595e9;
+}
+
 .quit-quiz-wrap {
   width: 220px;
   height: 50px;

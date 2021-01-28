@@ -21,30 +21,32 @@
         </div>
         <div class="book-wrap">
           <% @results.each do |book| %>
-            <div class="book">
-              <div class="book-content">
-                <%= image_tag book.image.variant(resize: '400x350'), class: "book-image" if book.image.attached? %>
-                <div class="book-title">
-                  <%= book.title %>
+            <% if book.words.present?%>
+              <div class="book">
+                <div class="book-content">
+                  <%= image_tag book.image.variant(resize: '400x350'), class: "book-image" if book.image.attached? %>
+                  <div class="book-title">
+                    <%= book.title %>
+                  </div>
+                  <div class="book-genre">
+                    <%= book.genre.name %>
+                  </div>
                 </div>
-                <div class="book-genre">
-                  <%= book.genre.name %>
+                <div class="book-subcontent">
+                  <div class="book-date">
+                    <%= l(book.created_at, format: :long) %>
+                  </div>
+                  <div class="book-user">
+                    <%= "by #{book.user.nickname}" %>
+                  </div>
                 </div>
+                <%= link_to new_book_quiz_path(book.id), class: "quiz-cover" do %>
+                  <div>
+                    テストする
+                  </div>
+                <% end %>
               </div>
-              <div class="book-subcontent">
-                <div class="book-date">
-                  <%= l(book.created_at, format: :long) %>
-                </div>
-                <div class="book-user">
-                  <%= "by #{book.user.nickname}" %>
-                </div>
-              </div>
-              <%= link_to new_book_quiz_path(book.id), class: "quiz-cover" do %>
-                <div>
-                  テストする
-                </div>
-              <% end %>
-            </div>
+            <% end %>
           <% end %>
         </div>
         <div class="pagenation">

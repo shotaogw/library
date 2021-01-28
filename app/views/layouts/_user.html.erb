@@ -15,7 +15,15 @@
   </div>
   <div class="lower">
     <%= link_to "books(#{Book.where(user_id: current_user.id).count})", user_path(current_user.id), class: "card-type-select" %>
-    <%= link_to "words(#{Word.where(user_id: current_user.id).count})", book_word_path(user.books.ids, user.words.ids), class: "card-type-select" %>
-    <%= link_to "bookmarks(#{Bookmark.where(user_id: current_user.id).count})", book_bookmarks_path(user.bookmarked_books.ids), class: "card-type-select" %>
+    <% if user.words.present? %>
+      <%= link_to "words(#{Word.where(user_id: current_user.id).count})", book_word_path(user.books.ids, user.words.ids), class: "card-type-select" %>
+    <% else %>
+      <div class="card-type-select">words(0)</div>
+    <% end %>
+    <% if user.bookmarked_books.present? %>
+      <%= link_to "bookmarks(#{Bookmark.where(user_id: current_user.id).count})", book_bookmarks_path(user.bookmarked_books.ids), class: "card-type-select" %>
+    <% else %>
+      <div class="card-type-select">bookmarks(0)</div>
+    <% end %>
   </div>
 </div>

@@ -26,6 +26,10 @@
   padding: 5px;
 }
 
+.to-newbook-text:hover {
+  background-color: rgb(236, 236, 236);
+}
+
 .delete-notice {
   color: rgb(240, 52, 52);
 }

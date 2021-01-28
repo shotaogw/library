@@ -18,16 +18,29 @@
 }
 
 .headline {
-  height: 70px;
-  padding: 50px 0 40px 60px;
+  height: 100px;
+  padding: 50px 0 40px 40px;
   background-color: #2e2e8a;
 }
 
 .headline-name {
+  width: 210px;
+  height: 50px;
+  background-color: #515cc2;
+  border-bottom: 5px solid #403ec7;
   position: fixed;
-  color: white;
+  color: #fff;
   font-size: 20px;
   text-decoration: none;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.headline-name:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #a8c5fc;
+  border-bottom: 2px solid #5977ff;
 }
 
 /* ヘッダー */

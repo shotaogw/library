@@ -21,7 +21,11 @@
         </div>
         <div class="show-book-wrap">
           <div class="book-header">
-            <%= link_to 'ワード一覧', book_words_path(@book.id), class: "book-header-text" %>
+            <% if @book.words.present? %>
+              <%= link_to "ワード(#{@book.words.count})", book_words_path(@book.id), class: "book-header-text" %>
+            <% else %>
+              <div class="book-header-text">ワード(0)</div>
+            <% end %>
           </div>
           <%= render partial: "layouts/book", locals:{ book: @book } %>
         </div>
