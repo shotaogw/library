@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "layouts/side-bar" %>
+  </div>
+  <div class="main">
+    <div class="main-wrap">
+      <%= render "layouts/header" %>
+      <div class="words">
+        <div class="word-index-header">
+          <div class="quit-quiz-wrap">
+          </div>
+          <div class="word-book-info">
+            <div class="word-book-title"><%= strip_tags(@book.title).truncate(10) %></div>
+            <div class="word-book-genre"><%= @book.genre.name %></div>
+            <div class="word-book-user"><%= "by #{@book.user.nickname}" %></div>
+          </div>
+        </div>
+        <div class="quiz-wrap">
+          <div class="quiz-result">
+            <div class="pie-chart" id="blue-circle"></div>
+            <div class="pie-chart" id="gray-circle"></div>
+            <div class="circle">
+              <div class="data-percent">5/10</div>
+            </div>
+          </div>
+          <div class="grade-wrap">
+            <%= link_to 'テストを終了する', quiz_index_books_path, class: "grade" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
