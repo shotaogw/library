@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :search_book, only: [:search, :quiz_index]
 
   def index
     @books = Book.all.includes(:user).order(created_at: :DESC).page(params[:page]).per(10)
@@ -41,8 +42,9 @@ class BooksController < ApplicationController
   end
 
   def search
-    @q = Book.ransack(params[:q])
-    @results = @q.result.includes(:user).order(created_at: :DESC).page(params[:page]).per(10)
+  end
+
+  def quiz_index
   end
 
   private
@@ -57,5 +59,10 @@ class BooksController < ApplicationController
 
   def move_to_index
     redirect_to action: :index if current_user != @book.user
+  end
+
+  def search_book
+    @q = Book.ransack(params[:q])
+    @results = @q.result.includes(:user).order(created_at: :DESC).page(params[:page]).per(10)
   end
 end
