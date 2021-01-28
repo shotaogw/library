@@ -1,5 +1,6 @@
 <div class="book">
   <%= link_to book_path(book.id), class: "book-content" do %>
+    <%= image_tag book.image.variant(resize: '400x350'), class: "book-image" if book.image.attached? %>
     <div class="book-title">
       <%= book.title %>
     </div>

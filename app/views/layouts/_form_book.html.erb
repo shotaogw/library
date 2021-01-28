@@ -10,6 +10,10 @@
         <P>ジャンル</p>
       </div>
       <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
+      <div class="book-form-text">
+        <P>画像</p>
+      </div>
+      <%= f.file_field :image, id:"item-image" %>
     </div>
     <div class='create-book-btn-wrap'>
       <%= f.submit "作成する", class: 'create-book-btn' %>
