@@ -1,12 +1,44 @@
 <div class="top-page">
-  <div class='sub-sidebar'>
-    <%= link_to image_tag("/IMG_1476.png", class: "library-log"), root_path %>
+  <div class='top-header'>
+    <div class="left-top-header">
+      <%= link_to image_tag("/IMG_1476.png", class: "library-log"), root_path %>
+    </div>
+    <div class="right-top-header">
+      <%= link_to 'Log in', new_user_session_path, class: 'new-user-wrap' %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'new-user-wrap' %>
+    </div>
   </div>
 
-  <div class='contents row'>
-    <div class='form-wrap'>
-      <%= link_to 'ログイン', new_user_session_path, class: 'new-user-wrap' %>
-      <%= link_to 'アカウント作成', new_user_registration_path, class: 'new-user-wrap' %>
+  <div class="content">
+    <div class='content row'>
+      <div class="top-body">
+        <div class="top-img">
+          <p class="top-sentence1">共有できる</p>
+          <p class="top-sentence2">プログラミング学習に特化した<br>単語帳アプリ</p>
+          <p class="top-sentence3">クイズ機能</p>
+          <p class="top-sentence4">ブックマーク機能</p>
+        </div>
+      </div>
+      <div class="top-intro">
+        <div class="intro-text">
+          プログラミング学習、専門用語が多くて覚えられない...<br>
+          そんな経験はありませんか？<br>
+          <br>Libraryでは<b>ITに関する単語帳を作成、共有</b>することができます
+          <br>用語はもちろん、メソッドやソースコードを登録してもOK
+          <br>今すぐ右上のSign upから新規登録しよう❕
+        </div>
+      </div>
+      <div class="top-slide">
+        <span style="font-size: 24px; margin-left: 20px;">＜プレビュー＞</span>
+        <div class="slider">
+          <%= image_tag("/IMG_1570.jpeg", class: "slider-image") %>
+          <%= image_tag("/IMG_1571.jpeg", class: "slider-image") %>
+          <%= image_tag('/IMG_1572.jpeg', class: "slider-image") %>
+          <%= image_tag('/IMG_1573.jpeg', class: "slider-image") %>
+          <%= image_tag('/IMG_1574.jpeg', class: "slider-image") %>
+          <%= image_tag('/IMG_1575.jpeg', class: "slider-image") %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
