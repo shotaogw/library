@@ -1,11 +1,24 @@
 <div class="book">
-  <%= link_to book_path(book.id), class: "book-content" do %>
-    <div class="book-title">
-      <%= book.title %>
-    </div>
-    <div class="book-genre">
-      <%= book.genre.name %>
-    </div>
+  <% if current_user.id == book.user_id %>
+    <%= link_to book_path(book.id), class: "book-content" do %>
+      <%= image_tag book.image.variant(resize: '400x350'), class: "book-image" if book.image.attached? %>
+      <div class="book-title">
+        <%= book.title %>
+      </div>
+      <div class="book-genre">
+        <%= book.genre.name %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to book_words_path(book.id), class: "book-content" do %>
+      <%= image_tag book.image.variant(resize: '400x350'), class: "book-image" if book.image.attached? %>
+      <div class="book-title">
+        <%= book.title %>
+      </div>
+      <div class="book-genre">
+        <%= book.genre.name %>
+      </div>
+    <% end %>
   <% end %>
   <div class="book-subcontent">
     <div class="book-date">
